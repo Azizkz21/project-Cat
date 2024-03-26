@@ -1,0 +1,54 @@
+.contact-reviews__inner {
+  padding: 37px 20px 23px;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr);
+  gap: 20px;
+}
+
+.reviews__user {
+  min-height: 130px;
+  font-family: $fontFamilyOswaldRegular;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 10px 12px;
+  border: 1px solid $borderGray;
+  outline: none;
+
+  &::placeholder {
+    font-family: $fontFamilyOswaldRegular;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: $colorBlack;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .contact-reviews__inner {
+    width: 630px;
+    padding: 76px 30px 65px;
+    gap: 40px;
+  }
+
+  .reviews__user {
+    min-height: 150px;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 11px 20px;
+
+    &::placeholder {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .contact-reviews__inner {
+    width: 1200px;
+    padding: 76px 60px 67px;
+    gap: 80px;
+  }
+}

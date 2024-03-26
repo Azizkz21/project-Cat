@@ -1,0 +1,89 @@
+.form__inner {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr);
+  row-gap: 24px;
+  padding: 39px 20px 26px 20px;
+}
+
+.input__name--list {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr);
+  row-gap: 13px;
+}
+
+.input__name--item {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.input__name--title {
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.input__name {
+  width: 100%;
+  font-size: 16px;
+  line-height: 16px;
+  color: $colorBlack;
+
+  border: 1px solid $borderGray;
+  padding: 13px 14px;
+  outline: none;
+}
+
+
+@media (min-width: $tablet-width) {
+  .form__inner {
+    width: 630px;
+    row-gap: 72px;
+    padding: 66px 20px 71px 20px;
+    margin: 0 auto;
+  }
+
+  .input__name--list {
+    row-gap: 20px;
+  }
+
+  .input__name--item {
+    column-gap: 11px;
+  }
+
+  .input__name--title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .input__name {
+    font-size: 20px;
+    line-height: 30px;
+
+    padding: 11px 20px;
+  }
+
+}
+
+@media (min-width: $desktop-width) {
+  .form__inner {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 80px;
+    padding: 66px 20px 69px 20px;
+    margin: 0 auto;
+  }
+
+  .input__name--list {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr);
+    row-gap: 20px;
+  }
+
+  .input__name--item {
+    column-gap: 13px;
+  }
+}

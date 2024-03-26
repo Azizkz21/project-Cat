@@ -1,0 +1,248 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+.button__link {
+  display: block;
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $colorWhite;
+  background-color: $basic_green;
+
+  &:hover {
+    background-color: rgba(94, 170, 47, 1);
+  }
+
+  &:active {
+    background-color: rgba(94, 170, 47, 1);
+    color: rgba($color: $colorWhite, $alpha: 0.5);
+  }
+}
+
+.main-title {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+}
+
+// filter
+
+.filter-list {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr);
+  row-gap: 13px;
+  padding: 22px 0 19px;
+  border-top: 1px solid $borderGray;
+  border-bottom: 1px solid $borderGray;
+}
+
+.filter-item {
+  padding: 6.5px 0;
+  display: flex;
+}
+
+.control {
+  position: relative;
+  display: block;
+  padding-left: 45px;
+}
+
+.control-mark {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  outline: 1px solid $borderGray;
+}
+
+.control-input:disabled + .control-mark {
+  border-color: #242424;
+}
+
+.control-input[type="radio"] + .control-mark {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  content: "";
+  position: absolute;
+  top: 8.7px;
+  left: 8.5px;
+  width: 13.55px;
+  height: 13.55px;
+  background-color: $basic_green;
+  border-radius: 50%;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  position: absolute;
+  top: 6px;
+  left: 17px;
+  width: 2px;
+  height: 18px;
+  background-color: $basic_green;
+  content: "";
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::after {
+  position: absolute;
+  top: 11px;
+  left: 7px;
+  width: 2px;
+  height: 12px;
+  background-color: $basic_green;
+  content: "";
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  transform: rotate(45deg);
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::after {
+  transform: rotate(-45deg);
+}
+
+.control-label {
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+// contact-details
+
+.contact-details__group {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-top: 2px solid $basic_green;
+}
+.contact-details__title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 26px;
+  padding: 0 22px 0 20px;
+}
+
+@media (min-width: $tablet-width) {
+  .main-title {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  // filter
+
+  .filter-list {
+    padding: 25px 28px 29px;
+    border: 1px solid $borderGray;
+  }
+
+  .control {
+    padding-left: 60px;
+  }
+
+  .control-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .control-input[type="radio"]:checked + .control-mark::before {
+    top: 11px;
+    left: 11px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .control-input[type="checkbox"]:checked + .control-mark::before {
+    top: 7px;
+    left: 23px;
+    width: 2px;
+    height: 23px;
+  }
+
+  .control-input[type="checkbox"]:checked + .control-mark::after {
+    top: 17px;
+    left: 11px;
+    width: 2px;
+    height: 13px;
+  }
+
+  .control-label {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  // contact-details
+
+  .contact-details__group {
+    margin: 0 auto;
+    padding-left: 30px;
+  }
+  .contact-details__title {
+    font-size: 36px;
+    line-height: 36px;
+    padding: 0 36px 0 30px;
+  }
+
+  .contact-details__title br {
+    display: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .contact-details__group {
+    padding-left: 70px;
+  }
+  .contact-details__title {
+    padding: 0 36px 0 50px;
+  }
+}

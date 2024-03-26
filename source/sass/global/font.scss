@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "OswaldRg";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../font/oswaldRegular.woff2") format("woff2"),
+    url("../font/oswaldRegular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "OswaldMed";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../font/oswaldmedium.woff2") format("woff2"),
+    url("../font/oswaldmedium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "ArialMT";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../font/ArialMT.woff2") format("woff2"),
+    url("../font/ArialMT.woff") format("woff");
+}

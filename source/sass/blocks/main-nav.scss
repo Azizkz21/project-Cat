@@ -1,0 +1,145 @@
+.main-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  min-height: 51px;
+}
+
+.main-nav__toggle {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+
+  &:hover,
+  &:active {
+    background-color: rgba($color: $basic_green, $alpha: 0.8);
+  }
+}
+
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 24px;
+  height: 2px;
+  background-color: $colorBlack;
+  box-shadow: 0 8px 0 0 $colorBlack, 0 16px 0 0 $colorBlack;
+}
+
+.main-nav--closed .main-nav__toggle:active:before {
+  background-color: rgba($color: $colorBlack, $alpha: 30%);
+  box-shadow: 0 8px 0 0 rgba($color: $colorBlack, $alpha: 30%),
+    0 16px 0 0 rgba($color: $colorBlack, $alpha: 30%);
+}
+
+@media (max-width: $mobile-width-only) {
+  .main-nav--closed .site-list__item {
+    display: none;
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--nojs .site-list {
+    display: block;
+  }
+}
+
+.main-nav--opened .main-nav__toggle {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 8px;
+    width: 24px;
+    height: 2px;
+    background-color: $colorBlack;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+    box-shadow: none;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:active:before,
+  &:active:after {
+    background-color: rgba($color: $colorBlack, $alpha: 30%);
+  }
+}
+
+.main-nav__logo--wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 65px;
+  margin-right: auto;
+}
+
+.main-nav__logo--text {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: $tablet-width) {
+  .main-nav {
+    width: 708px;
+    column-gap: 10px;
+    padding: 0 30px;
+    margin: 0 auto;
+  }
+
+  .main-nav__logo--wrapper {
+    width: 174px;
+  }
+
+  .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav__logo--text {
+    display: block;
+    margin: 0;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-nav {
+    position: absolute;
+    width: 1220px;
+    margin: 0 auto;
+    top: 53px;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    z-index: 10;
+    padding: 0;
+  }
+
+  .nav{
+    position: relative;
+    top: 0;
+  }
+
+  .main-nav__logo--wrapper {
+    width: auto;
+    max-width: 202px;
+  }
+
+  .main-nav__logo {
+    margin-right: 10px;
+  }
+}
